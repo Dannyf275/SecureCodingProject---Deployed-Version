@@ -7,5 +7,6 @@ DB_CONFIG = {
     'password': 'RY6YN7y8PWN9H5oL',
     'database': 'test',
     'port': 4000, 
-    'ssl_disabled': True # Sometimes needed for simple cloud connections, or use ssl_ca
-}
+    'ssl_ca': '', # השאר ריק, הדרייבר ישתמש בברירת המחדל
+    'use_pure': True # עוזר לעיתים בחיבורי ענן
+    }
