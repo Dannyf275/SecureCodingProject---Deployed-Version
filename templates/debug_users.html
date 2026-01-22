@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Debug Users</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #222; color: #0f0; }
+        table { border-collapse: collapse; width: 100%; color: #fff; }
+        th, td { border: 1px solid #444; padding: 8px; text-align: left; }
+        th { background: #333; }
+        .hash { color: #ff79c6; }
+    </style>
+</head>
+<body>
+    <h1>[DEBUG] User Database Dump</h1>
+    <p>Use these values to perform the UNION-Based SQL Injection.</p>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password Hash</th>
+            <th>Salt</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user['id'] }}</td>
+            <td>{{ user['username'] }}</td>
+            <td class="hash">{{ user['password_hash'] }}</td>
+            <td class="hash">{{ user['salt'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('login') }}" style="color: yellow;">Back to Login</a>
+</body>
+</html>

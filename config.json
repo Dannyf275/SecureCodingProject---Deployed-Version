@@ -1,0 +1,21 @@
+{
+    "description": "Security configuration for Communication_LTD",
+    "password_policy": {
+        "min_length": 10,
+        "require_uppercase": true,
+        "require_lowercase": true,
+        "require_numbers": true,
+        "require_special_chars": true,
+        "history_retention": 3,
+        "dictionary_blocklist": [
+            "password",
+            "admin",
+            "123456",
+            "qwerty",
+            "communication"
+        ]
+    },
+    "login_policy": {
+        "max_attempts": 3
+    }
+}
